@@ -1,7 +1,6 @@
 <?php
 
 class Model {
-    public $pripojeni;
     
 
 
@@ -37,7 +36,7 @@ class Model {
 
 
 
-function navratSeznam () {
+public function navratSeznam () {
     
    $pripojeni = mysqli_connect('localhost', 'root','', 'projekt');   
    if (!$pripojeni) {
@@ -85,14 +84,25 @@ mysqli_close($pripojeni);
 // tenhle post přečte informace z kontroleru, poté pomocí SQL příkazu vytvoří pojištěnce v databázi
 // je to vlatně jenom most mezi kontrolerem a databází
 
-function vytvorPojistence ($Jmeno, $Prijmeni, $Vek, $Telefon) { 
+public function vytvorPojistence ($Jmeno, $Prijmeni, $Vek, $Telefon) { 
+    
+     $pripojeni = mysqli_connect('localhost', 'root','', 'projekt');   
+   if (!$pripojeni) {
+          echo ('Nepřipojeno!' . mysqli_connect_error());
+    }
     
     $sqlPrikaz = "INSERT INTO pojištěnci (ID, Jméno, Příjmení, Věk, Telefon) VALUES ('','$Jmeno', '$Prijmeni', '$Vek', '$Telefon')";
     
     mysqli_query ($pripojeni, $sqlPrikaz); 
     
-    // pokud tam bude error, tak to vrátí string error (pokud tam nic není, tak to vrátí prázdný řetězec, tím pádem to ani nepoznam)
     
+    mysqli_close($pripojeni);
+    
+    
+    
+    
+        // pokud tam bude error, tak to vrátí string error (pokud tam nic není, tak to vrátí prázdný řetězec, tím pádem to ani nepoznam)
+
     return mysqli_error($pripojeni);
     
 }
