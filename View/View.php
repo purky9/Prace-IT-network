@@ -1,5 +1,7 @@
 <?php
 include '../Controller/Controller.php';
+include '../Controller/Formular.php';
+$formular = new Formular();
 $controller = new Controller();
 ?>
 
@@ -22,6 +24,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
     <?php
     
     $controller->nactiPojistence();
+    $formular->show();
     
     ?>
+
+
 </html>

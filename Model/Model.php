@@ -19,9 +19,6 @@ class Model {
 
 
 
-
-
-
 // tahle funkce mi zkontroluje, zda se to vůbec připojilo k databázi
 // když ne, vypíše mi to Nepřipojeno plus se mi za to napíše proč
 // mysqli_connect_error je funkce, která vrací error při připojení
@@ -75,10 +72,7 @@ mysqli_close($pripojeni);
 // Tohle pošle seznam pojištěnců zpátky
 
     return $polePojistencu;
-
 }
-
-
 
 
 // tenhle post přečte informace z kontroleru, poté pomocí SQL příkazu vytvoří pojištěnce v databázi
@@ -94,19 +88,17 @@ public function vytvorPojistence ($Jmeno, $Prijmeni, $Vek, $Telefon) {
     $sqlPrikaz = "INSERT INTO pojištěnci (ID, Jméno, Příjmení, Věk, Telefon) VALUES ('','$Jmeno', '$Prijmeni', '$Vek', '$Telefon')";
     
     mysqli_query ($pripojeni, $sqlPrikaz); 
-    
-    
+
+    $chybovazprava = mysqli_error($pripojeni);
+
     mysqli_close($pripojeni);
     
-    
-    
-    
+
         // pokud tam bude error, tak to vrátí string error (pokud tam nic není, tak to vrátí prázdný řetězec, tím pádem to ani nepoznam)
 
-    return mysqli_error($pripojeni);
+    return $chybovazprava;
     
 }
-
 
 
 

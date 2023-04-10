@@ -47,6 +47,8 @@ public function nactiPojistence () : void
 
 
 
+
+
     //$Jmeno=$_POST ["Jmeno"];
    // $Prijmeni= $_POST ["Prijmeni"];
    // $Vek= $_POST ["Vek"];
