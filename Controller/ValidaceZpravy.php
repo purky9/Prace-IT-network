@@ -8,6 +8,7 @@ $Telefon = (isset($_POST['Telefon'])) ? $_POST['Telefon'] : '';
 
 //tohle nahradí + znak u předvolby prázdným znakem
 $Telefon = str_replace("+", "", $Telefon);
+
 //tohle nahradí prázdný znaky "ničím", takže když mi někdo zadá tel. číslo s mezerama, tak se to uloží správně
 $Telefon = preg_replace('/[\s]+/', '', $Telefon);
 

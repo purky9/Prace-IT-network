@@ -59,7 +59,5 @@ class Model
 
     }
 
-// nutné zavření přípojení databáze!!!!!
-//mysqli_close($pripojeni);
 
 }
