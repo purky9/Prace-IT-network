@@ -2,16 +2,16 @@
 
 class Formular
 {
-
-
-    public function show() {
+    public function show()
+    {
 
         $Jmeno = (isset($_POST['Jmeno'])) ? $_POST['Jmeno'] : '';
         $Prijmeni = (isset($_POST['Prijmeni'])) ? $_POST['Prijmeni'] : '';
         $Vek = (isset($_POST['Vek'])) ? $_POST['Vek'] : '';
         $Telefon = (isset($_POST['Telefon'])) ? $_POST['Telefon'] : '';
 
-echo('            
+
+        echo('            
             <form method="post" action="../Controller/ValidaceZpravy.php">
                 <table><tr>
                 
@@ -36,6 +36,8 @@ echo('
                 
                 </table>
                 <input type="submit" value="Odeslat" />
+              
+                
             </form>
         ');
     }
