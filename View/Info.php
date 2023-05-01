@@ -13,7 +13,7 @@ include '../View/Header.html';
 </head>
 <body>
 <h3>
-bla bal lba
+Aplikace PojištěnciApp byla vytvořena v roce 2023 v rámci školení od IT Network za účelem ukládání pojištěnců do databáze.
   </h3>
 </body>
 </html>
